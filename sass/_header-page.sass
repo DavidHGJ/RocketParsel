@@ -1,0 +1,61 @@
+@use 'mixins' as mix
+@use 'variables' as var
+
+header
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    box-sizing: border-box
+    padding: 40px
+
+    div
+        h1
+            font-style: italic
+    
+    a
+        background: linear-gradient(to right, var.$main_font_color 50%, var.$color_button 50%)
+        background-size: 200% 100%
+        background-position: right
+
+        transition: ease .3s
+
+        font-size: .8em
+        
+        box-sizing: border-box
+        padding: 8px 20px
+        position: relative
+
+        border-radius: 5px
+
+        &:hover
+            background-position: left
+            color: var.$color_button
+
+
+    nav
+        ul
+            display: flex
+            
+            li
+                margin: 0 15px
+
+                @include mix.responsivo(1024px)
+                    margin: 0 5px
+
+                input
+                    display: none
+
+                    &:checked + label
+                        opacity: 1
+
+                label
+                    font-size: .8em
+
+                    transition: ease .1s
+
+                    cursor: pointer
+                    opacity: .5
+
+                    &:hover
+                        opacity: 1
