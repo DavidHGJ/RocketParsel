@@ -7,7 +7,59 @@ header
     justify-content: space-between
 
     box-sizing: border-box
-    padding: 40px
+    padding: 40px 0px
+
+    #btn-menu-mobile
+        display: none
+
+        &:checked + .btn-menu-mobile
+            background-position: left
+
+        &:checked + .btn-menu-mobile div
+            background-color: var.$color_button
+
+    .btn-menu-mobile
+        background: linear-gradient(to right, var.$main_font_color 50%, var.$color_button 50%)
+        background-size: 200% 100%
+        background-position: right
+
+        transition: ease .3s
+
+        display: none
+
+        width: 30px
+        height: 30px
+
+        border: 1px solid var.$color_button
+        border-radius: 5px
+        
+        background-color: var.$color_button
+
+        cursor: pointer
+
+        @include mix.responsivo(1024px)
+            display:  flex
+            justify-content: center
+            align-content: center
+            flex-direction: column
+
+        &:hover
+            background-position: left
+
+        &:hover div
+            background-color: var.$color_button
+
+        div
+            width: 20px
+            height: 2px
+
+            transition: ease .3s
+
+            margin: 2px auto
+
+            border-radius: 10px
+
+            background-color: var.$main_font_color
 
     div
         h1
@@ -28,6 +80,9 @@ header
 
         border-radius: 5px
 
+        @include mix.responsivo(1024px)
+            display: none
+
         &:hover
             background-position: left
             color: var.$color_button
@@ -36,6 +91,9 @@ header
     nav
         ul
             display: flex
+
+            @include mix.responsivo(1024px)
+                display: none
             
             li
                 margin: 0 15px

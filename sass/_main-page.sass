@@ -1,0 +1,35 @@
+@use 'variables' as var
+    
+main
+    cursor: default
+    user-select: none
+
+    h1
+        margin-top: 40px
+        width: 450px
+
+        font-size: 3em
+
+    p
+        margin-top: 25px
+        margin-bottom: 50px 
+        width: 300px
+
+        font-size: .7em
+
+        opacity: .7
+
+    a
+        font-size: .8em
+        
+        background-color: var.$color_button
+
+        transition: ease .3s
+
+        border-radius: 5px
+        
+        box-sizing: border-box
+        padding: 8px 20px
+
+        &:hover
+            background-color: var.$color_sec_button
