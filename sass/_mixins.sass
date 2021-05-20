@@ -1,3 +1,15 @@
 @mixin responsivo($breakpoint-width)
     @media (max-width: $breakpoint-width)
         @content
+
+@mixin planet-rotate-animation($segundos)
+
+    transform: rotate(0deg)
+    animation: planet-rotate $segundos infinite
+
+    @keyframes planet-rotate
+        0%
+            tranform: rotate(0deg)
+        100%
+            transform: rotate(360deg)
+            

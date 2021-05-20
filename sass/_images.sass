@@ -1,0 +1,62 @@
+@use 'mixins' as mix
+
+main
+    .rocket-image
+        position: absolute
+
+        transform: rotate(260deg)
+
+        right: 0%
+        top: 15%
+        z-index: -1
+
+        animation: rocket-animation 10s infinite
+
+        @keyframes rocket-animation
+            0%
+                transform: rotate(260deg)
+            50%
+                transform: rotate(250deg)
+            100%
+                transform: rotate(260deg)                
+    
+    .planet-1
+        position: absolute
+        transition: ease .3s
+
+        width: 160px
+        top: 10%
+        left: -2%
+        z-index: -1
+
+        @include mix.planet-rotate-animation(30s)    
+
+        &:hover
+            animation-play-state: paused
+
+    .planet-2
+        position: absolute
+
+        width: 360px
+        top: -20%
+        right: -5%
+        z-index: -1
+
+        @include mix.planet-rotate-animation(120s)
+
+        &:hover
+            animation-play-state: paused
+
+
+    .planet-3
+        position: absolute
+
+        width: 1024px
+        top: 60%
+        left: 0
+        z-index: -1
+
+        @include mix.planet-rotate-animation(120s)
+
+        &:hover
+            animation-play-state: paused
